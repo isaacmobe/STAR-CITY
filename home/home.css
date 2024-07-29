@@ -1,0 +1,558 @@
+:root {
+    --primary-green: #606C38; /* Primary green color */
+    --dark-green: #283618; /* Dark green color */
+    --cream: #FEFAE0; /* Cream color */
+    --light-brown: #DDA15E; /* Light brown color */
+    --dark-brown: #BC6C25; /* Dark brown color */
+    --transition: color 0.4s ease, background 0.4s ease; /* Transition animation value*/
+}
+
+/* Base styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: var(--dark-green);
+    background-color: var(--cream);
+    padding-top: 70px; /* Add padding to prevent content from being hidden under the fixed header */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: justify;
+}
+
+a {
+    color: var(--dark-green);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header styles */
+header {
+    padding: 20px 0;
+    background: var(--dark-green);
+    position: fixed; /* Makes the header fixed upon scroll */
+    width: 100%; /* Ensures the header spans the full width of the viewport */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures the header is above other content */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Added box-shadow for depth */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.header-logo .logo{
+    width: 4rem;
+}
+
+.header-logo h2{
+    color: var(--cream);
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+nav ul li a {
+    color: var(--cream);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--light-brown);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin-right: 1rem;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 2rem;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a.active-link{
+    color: var(--light-brown);
+}
+
+
+/* Hero section styles */
+.hero-content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--cream);
+}
+
+.hero-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place the image behind the content */
+}
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay for better visibility of content */
+    z-index: 1;
+}
+
+.hero-txt {
+    position: relative;
+    z-index: 2; /* Place the text above the overlay */
+    margin-left: 11rem;
+}
+
+.hero-txt h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-weight: 400;
+}
+
+.hero-txt p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: 2rem;
+    max-width: 600px; /* Optional: to limit the width of the text */
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-link1 {
+    background: var(--primary-green);
+    color: var(--cream);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.hero-link2 {
+    border: 1px solid var(--light-brown);
+    color: var(--cream);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.hero-link1:hover {
+    background: var(--dark-brown);
+}
+
+.hero-link2:hover {
+    backdrop-filter: blur(1px);
+}
+
+/* About section styles */
+.about-container{
+    display: flex;
+    /* gap: 5rem; */
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    
+}
+
+.about h1{
+    font-size: 2.5rem;
+    padding-right: 16rem;
+    width: 325rem;
+}
+
+.about p{
+    font-size: 1.3rem;
+}
+
+.about-img{
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Added box-shadow for depth */
+}
+
+
+/* Explore section styles */
+.explore{
+    margin-bottom: 10rem;
+}
+
+.explore h1{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+}
+
+.explore-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7rem;
+}
+
+.explore-card{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.explore-card h3{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.explore-card p{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.explore-card a{
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.explore-card a:hover{
+    color: var(--dark-brown);
+}
+
+.explore-img{
+    width: 5rem;
+}
+
+/* Subscribe section styles */
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--primary-green);
+    padding: 3rem;
+    border-radius: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.form-text {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.form-text h1 {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-text p {
+    font-size: 1.2rem;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 1rem; /* This creates space between the input and button */
+}
+
+.form input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: var(--cream);
+    color: var(--dark-green);
+    font-size: 1rem;
+    height: 3rem; /* Set a fixed height */
+}
+
+.form button {
+    background: var(--primary-green);
+    color: var(--cream);
+    padding: 0 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: var(--transition);
+    border: 0;
+    cursor: pointer;
+    white-space: nowrap;
+    height: 3rem; /* Match the height of the input */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form button:hover {
+    background: var(--dark-brown);
+}
+
+input[type="email"]:focus {
+    outline: none;
+    border-color: var(--primary-green);
+}
+
+
+/* Footer section styles */
+.footer{
+    margin-top: 10rem;
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--dark-green);
+    padding: 5rem;
+    color: var(--cream);
+}
+
+.footer-logo{
+    width: 6rem;
+}
+
+.quick-links{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.quick-links a{
+    color: var(--cream);
+}
+
+.quick-links a:hover{
+    color: var(--dark-brown);
+}
+
+.footer p{
+    font-size: 1rem;
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+
+    .hero-txt h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-txt p {
+        font-size: 1.2rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about h1 {
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .explore-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    .form-container {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .form-text {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .form {
+        width: 100%;
+    }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    .header-logo h2 {
+        font-size: 1.5rem;
+    }
+
+    .header-logo .logo {
+        width: 3rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: var(--dark-green);
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero-txt {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        text-align: center;
+    }
+
+    .hero-txt h1 {
+        font-size: 2rem;
+    }
+
+    .hero-txt p {
+        font-size: 1rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about h1 {
+        font-size: 2rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+
+    .explore h1 {
+        font-size: 2rem;
+    }
+
+    .explore-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .form input, .form button {
+        width: 100%;
+    }
+
+    .quick-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+
+    .hero-txt {
+        margin-left: 2rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .hero-txt p {
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 2rem;
+        max-width: 600px; /* Optional: to limit the width of the text */
+    }
+
+    .form-container {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .form-text {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .form {
+        width: 100%;
+    }
+    /* I will put styles for smaller screens upon direction*/
+}
+
+
+

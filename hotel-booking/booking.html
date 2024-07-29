@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarCity | Booking</title>
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="../assets/starcity.svg" type="image/x-icon">
+    <!-- LINK TO CSS -->
+    <link rel="stylesheet" href="./booking.css">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container container">
+            <div class="header-logo">
+                <img src="../assets/starcity.svg" alt="" class="logo">
+                <h2>Star City</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../home/home.html">Home</a></li>
+                    <li><a href="../heritage/heritage.html">Heritage</a></li>
+                    <li><a href="../hotel-booking/booking.html">Hotel Booking</a></li>
+                    <li><a href="../gallery/gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main> 
+        <div class="container">
+            <section id="booking-form">
+                <h2>Heritage Site Booking Form</h2>
+                <form action="https://formspree.io/f/mayrrvje" method="POST">
+        
+                    <!-- Personal Information -->
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        <div class="form-group">
+                            <label for="name">Full Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="_replyto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </fieldset>
+        
+                    <!-- Booking Information -->
+                    <fieldset>
+                        <legend>Booking Information</legend>
+                        <div class="form-group">
+                            <label for="heritage-site">Heritage Site:</label>
+                            <select id="heritage-site" name="heritage-site" required>
+                                <option value="">Select Site</option>
+                                <option value="The Deserter Kingdom">The Deserter Kingdom</option>
+                                <option value="The Dark Forest">The Dark Forest</option>
+                                <option value="The Wonder Roads">The Wonder Roads</option>
+                                <option value="Brow Ridge Mountains">Brow Ridge Mountains</option>
+                                <option value="Sands of Time Beach">Sands of Time Beach</option>
+                                <option value="Elephant Kingdom">Elephant Kingdom</option>
+                                <option value="Balloon Paradise">Balloon Paradise</option>
+                                <option value="Nyumbu Plains">Nyumbu Plains</option>
+                                <option value="Green Trails Park">Green Trails Park</option>
+                                <option value="Mobe Fossil Site">Mobe Fossil Site</option>
+                                <option value="Maasai Mara">Maasai Mara</option>
+                                <option value="Snorkle City">Snorkle City</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hotel">Preferred Hotel:</label>
+                            <select id="hotel" name="hotel" required>
+                                <option value="">Select Hotel</option>
+                                <option value="Hotel 1">Hotel 1</option>
+                                <option value="Hotel 2">Hotel 2</option>
+                                <option value="Hotel 3">Hotel 3</option>
+                                <option value="Hotel 4">Hotel 4</option>
+                                <option value="Hotel 5">Hotel 5</option>
+                                <option value="Hotel 6">Hotel 6</option>
+                                <option value="Hotel 7">Hotel 7</option>
+                                <option value="Hotel 8">Hotel 8</option>
+                                <option value="Hotel 9">Hotel 9</option>
+                                <option value="Hotel 10">Hotel 10</option>
+                                <option value="Hotel 11">Hotel 11</option>
+                                <option value="Hotel 12">Hotel 12</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="visit-dates">Visit Start Date:</label>
+                            <input type="date" id="visit-start-date" name="visit-start-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="visit-end-date">Visit End Date:</label>
+                            <input type="date" id="visit-end-date" name="visit-end-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duration of Stay (Days):</label>
+                            <input type="number" id="duration" name="duration" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="number-of-visitors">Number of Visitors:</label>
+                            <input type="number" id="number-of-visitors" name="number-of-visitors" required>
+                        </div>
+                    </fieldset>
+        
+                    <!-- Payment Information -->
+                    <fieldset>
+                        <legend>Payment Information</legend>
+                        <div class="form-group">
+                            <label for="payment-method">Payment Method:</label>
+                            <select id="payment-method" name="payment-method" required>
+                                <option value="credit-card">Credit Card</option>
+                                <option value="debit-card">Debit Card</option>
+                                <option value="bank-transfer">Bank Transfer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-number">Card Number:</label>
+                            <input type="text" id="card-number" name="card-number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="price-range">Price Range:</label>
+                            <select id="price-range" name="price-range" required>
+                                <option value="">Select Price Range</option>
+                                <option value="Under $100">$0 - $100</option>
+                                <option value="$100 - $300">$100 - $300</option>
+                                <option value="$300 - $500">$300 - $500</option>
+                                <option value="Above $500">Above $500</option>
+                            </select>
+                        </div>
+                    </fieldset>
+        
+                    <!-- Additional Information -->
+                    <fieldset>
+                        <legend>Additional Information</legend>
+                        <div class="form-group">
+                            <label for="special-requests">Special Requests:</label>
+                            <textarea id="special-requests" name="special-requests" rows="4"></textarea>
+                        </div>
+                    </fieldset>
+        
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+        </div> 
+    </main>
+
+    <footer class="footer">
+        <div class="logo">
+            <img src="../assets/starcity.svg" alt="footer-logo" class="footer-logo">
+        </div>
+        <div class="quick-links">
+            <a href="../home/home.html">Home</a>
+            <a href="../heritage/heritage.html">Heritage</a>
+            <a href="../hotel-booking/booking.html">Book Now</a>
+            <a href="../gallery/gallery.html">Gallery</a>
+        </div>
+        <p>&copy; 2024 StarCity. All rights reserved.</p>
+    </footer>
+    <script src="../mainjs/main.js"></script>
+</body>
+</html>

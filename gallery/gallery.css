@@ -1,0 +1,248 @@
+:root {
+    --primary-green: #606C38; /* Primary green color */
+    --dark-green: #283618; /* Dark green color */
+    --cream: #FEFAE0; /* Cream color */
+    --light-brown: #DDA15E; /* Light brown color */
+    --dark-brown: #BC6C25; /* Dark brown color */
+    --transition: all 0.3s ease-in-out;; /* Transition animation value*/
+}
+
+/* Base styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: var(--dark-green);
+    background-color: var(--cream);
+    scroll-behavior: smooth;
+    padding-top: 70px; /* Add padding to prevent content from being hidden under the fixed header */
+}
+
+h1, h2, h3 {
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: justify;
+}
+
+a {
+    color: var(--dark-green);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header styles */
+header {
+    padding: 20px 0;
+    background: var(--dark-green);
+    position: fixed; /* Makes the header fixed upon scroll */
+    width: 100%; /* Ensures the header spans the full width of the viewport */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures the header is above other content */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Added box-shadow for depth */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.header-logo .logo{
+    width: 4rem;
+}
+
+.header-logo h2{
+    color: var(--cream);
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+nav ul li a {
+    color: var(--cream);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--light-brown);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin-right: 1rem;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 2rem;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a.active-link{
+    color: var(--light-brown);
+}
+
+/* gallery section styles */
+.gallery{
+    margin-top: 8rem;
+}
+
+.gallery h1{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.gallery p{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.gallery-grid img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    height: 200px; /* Fixed height for all images */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Added box-shadow for depth */
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+
+.book-prompt{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.book-link{
+    background: var(--primary-green);
+    color: var(--cream);
+    padding: 0.9rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-link:hover{
+    background: var(--dark-brown);
+}
+
+
+
+
+/* Footer section styles */
+.footer{
+    margin-top: 10rem;
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--dark-green);
+    padding: 5rem;
+    color: var(--cream);
+}
+
+.footer-logo{
+    width: 6rem;
+}
+
+.quick-links{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.quick-links a{
+    color: var(--cream);
+}
+
+.quick-links a:hover{
+    color: var(--dark-brown);
+}
+
+.footer p{
+    font-size: 1rem;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+
+    .hero-txt {
+        margin-left: 2rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .hero-txt p {
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 2rem;
+        max-width: 600px; /* Optional: to limit the width of the text */
+    }
+
+    /* I will put styles for smaller screens upon direction*/
+}
+
